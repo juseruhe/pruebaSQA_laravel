@@ -18,6 +18,6 @@ use App\Http\Controllers\LoginController;
 
 
 Route::resource('usuario',UsuarioController::class);
-Route::resource('login',LoginController::class);
+Route::resource('login',LoginController::class,);
 
 
