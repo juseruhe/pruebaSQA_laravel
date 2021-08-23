@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Crypt;
 
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Str;
+
 
 class LoginController extends Controller
 {
@@ -56,7 +58,9 @@ class LoginController extends Controller
 
           if ($contrasena == $request->contrasena){
 
-            return 1;
+            $string = Str::random(16);
+
+            return $string;
 
           }
            else {
@@ -70,7 +74,7 @@ class LoginController extends Controller
 
         else {
 
-            return $usuarios;
+            return 0;
 
         }
 
