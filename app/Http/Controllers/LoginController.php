@@ -132,4 +132,20 @@ class LoginController extends Controller
     {
         //
     }
+
+    public function correo($name){
+
+      $usuarios =  Usuario::where('email',$name)->first();
+
+      $usuario = [
+          "id" => $usuarios["id"],
+          "nombre" =>  $usuarios["nombre"],
+          "apellido" =>  $usuarios["apellido"],
+          "cedula" =>  $usuarios["cedula"],
+          "email" =>  $usuarios["email"],
+          "contrasena" =>  crypt::decrypt($usuarios["contrasena"])
+      ];
+
+        return $usuario;
+    }
 }
