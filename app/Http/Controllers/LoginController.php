@@ -23,6 +23,10 @@ class LoginController extends Controller
     public function index()
     {
         //
+
+       
+
+        
     }
 
     /**
@@ -58,9 +62,9 @@ class LoginController extends Controller
 
           if ($contrasena == $request->contrasena){
 
-            $string = Str::random(16);
+            
 
-            return $string;
+            return 1;
 
           }
            else {
@@ -92,7 +96,7 @@ class LoginController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
