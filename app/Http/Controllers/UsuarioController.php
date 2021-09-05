@@ -76,7 +76,7 @@ class UsuarioController extends Controller
     {
         //
 
-        $usuario = Usuario::where('id',$id)->get();
+        $usuario = Usuario::where('id',$id)->first();
 
         return $usuario;
     }
