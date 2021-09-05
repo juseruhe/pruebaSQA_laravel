@@ -77,8 +77,24 @@ class UsuarioController extends Controller
         //
 
         $usuario = Usuario::where('id',$id)->first();
+        
+      
 
-        return $usuario;
+            
+
+
+
+        $datos = [
+            "nombre" => $usuario["nombre"],
+         "apellido" =>    $usuario["apellido"],
+           "cedula" =>  $usuario["cedula"],
+           "correo" =>  $usuario["email"],
+           "contrasena" => crypt::decrypt($usuario["contrasena"])
+            
+        ];
+        
+
+        return $datos;
     }
 
     /**
