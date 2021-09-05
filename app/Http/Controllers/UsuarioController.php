@@ -85,10 +85,11 @@ class UsuarioController extends Controller
 
 
         $datos = [
+            "id" => $usuario["id"],
             "nombre" => $usuario["nombre"],
          "apellido" =>    $usuario["apellido"],
            "cedula" =>  $usuario["cedula"],
-           "correo" =>  $usuario["email"],
+           "email" =>  $usuario["email"],
            "contrasena" => crypt::decrypt($usuario["contrasena"])
             
         ];
